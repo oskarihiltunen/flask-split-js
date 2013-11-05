@@ -34,7 +34,7 @@ setup(
     zip_safe=False,
     platforms='any',
     install_requires=[
-        'Flask>=0.7',
+        'Flask>=0.8',
         'Flask-Split>=0.2',
     ],
     cmdclass={'test': Test},
