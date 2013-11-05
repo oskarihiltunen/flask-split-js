@@ -2,7 +2,7 @@ Flask-Split-JS version 0.0.1
 ============================
 
 Flask-Split-JS offers utilities for using
-`Flask-Split <http://github.com/jpvanhal/flask-split>` from the browser
+`Flask-Split <http://github.com/jpvanhal/flask-split>`_ from the browser
 using JavaScript.
 
 Setup
@@ -42,3 +42,10 @@ FlaskSplit.finished(experiment_name, reset=true)
 A port of Flask-Split's ``finished`` function.
 
 Invalid arguments cause errors to be thrown.
+
+Resources
+---------
+
+- `Flask-Split on PyPI <https://pypi.python.org/pypi/Flask-Split/0.2.0>`_
+- `Code <https://github.com/FelixLoether/flask-split-js>`_
+- `Issue tracker <https://github.com/FelixLoether/flask-split-js/issues>`_
