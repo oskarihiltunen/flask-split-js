@@ -36,7 +36,10 @@ FlaskSplit = (function () {
     function ab_test_request(experiment_name, alternatives, callback) {
         $.get(
             '/split-js/ab-test',
-            {experiment_name: experiment_name, alternatives: alternatives},
+            JSON.stringify({
+                experiment_name: experiment_name,
+                alternatives: alternatives
+            }),
             function (data) {
                 callback(data.alternative);
             },
@@ -47,7 +50,10 @@ FlaskSplit = (function () {
     function finished_request(experiment_name, reset) {
         $.post(
             '/split-js/finished',
-            {experiment_name: experiment_name, reset: reset},
+            JSON.stringify({
+                experiment_name: experiment_name,
+                reset: reset
+            }),
             function (data) {},
             'json'
         );
