@@ -1,0 +1,2 @@
+include README.rst CHANGES.rst LICENSE
+recursive-include flask_split_js/static *

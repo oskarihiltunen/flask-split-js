@@ -1,0 +1,9 @@
+{
+    "name": "Flask-Split-JS",
+    "private": true,
+    "version": "0.0.1",
+    "devDependencies": {
+        "mocha": "1.14.x"
+    },
+    "repository": "http://github.com/FelixLoether/Flask-Split-JS"
+}
