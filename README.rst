@@ -1,4 +1,4 @@
-Flask-Split-JS version 0.0.1
+Flask-Split-JS version 0.1.0
 ============================
 
 .. image:: https://travis-ci.org/FelixLoether/flask-split-js.png?branch=master

@@ -19,7 +19,7 @@ class Test(Command):
 
 setup(
     name='Flask-Split-JS',
-    version='0.0.1',
+    version='0.1.0',
     url='http://github.com/FelixLoether/flask-split-js',
     license='MIT',
     author='Oskari Hiltunen',
