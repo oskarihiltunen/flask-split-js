@@ -12,8 +12,9 @@ class Test(Command):
         pass
 
     def run(self):
-        subprocess.call(['py.test', 'tests/python'])
-        subprocess.call(['node_modules/mocha/bin/mocha', 'tests/js'])
+        err1 = subprocess.call(['py.test', 'tests/python'])
+        err2 = subprocess.call(['node_modules/mocha/bin/mocha', 'tests/js'])
+        raise SystemExit(err1 or err2)
 
 
 setup(
