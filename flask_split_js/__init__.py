@@ -17,9 +17,15 @@ split_js = Blueprint(
 )
 
 
+def get_json():
+    if hasattr(request, 'get_json'):
+        return request.get_json(silent=True)
+    return request.json
+
+
 @split_js.route('/ab-test', methods=['GET'])
 def ab_test():
-    json = request.get_json(silent=True)
+    json = get_json()
     alternative = flask.ext.split.ab_test(
         json['experiment_name'], *json['alternatives']
     )
@@ -28,6 +34,6 @@ def ab_test():
 
 @split_js.route('/finished', methods=['POST'])
 def finished():
-    json = request.get_json(silent=True)
+    json = get_json()
     flask.ext.split.finished(json['experiment_name'], json['reset'])
     return jsonify(ok=True)

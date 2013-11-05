@@ -4,6 +4,7 @@ python:
   - 2.7
 env:
   - FLASK=0.8
+  - FLASK=0.10
 install:
   - npm install
   - pip install -q Flask==$FLASK --use-mirrors
