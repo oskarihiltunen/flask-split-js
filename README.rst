@@ -1,7 +1,7 @@
 Flask-Split-JS version 0.0.1
 ============================
 
-.. image:: https://travis-ci.org/FelixLoether/flask-split-js.png?branch=master   :target: https://travis-ci.org/FelixLoether/flask-split-js
+.. image:: https://travis-ci.org/FelixLoether/flask-split-js.png?branch=master
 
 Flask-Split-JS offers utilities for using
 `Flask-Split <http://github.com/jpvanhal/flask-split>`_ from the browser
