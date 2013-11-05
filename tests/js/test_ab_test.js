@@ -4,7 +4,7 @@ var utils = require('./utils');
 var throws = utils.throws;
 var doesNotThrow = utils.doesNotThrow;
 
-var FS = require('../../flask_split_js/static/js/flask-split');
+var FS = require('../../flask_split_js/static/js/flask-split.min.js');
 var ab_test = FS.ab_test;
 
 function args(experiment_name, alt_1, alt_2, cb) {

@@ -1,0 +1,1 @@
+node_modules/uglify-js/bin/uglifyjs flask_split_js/static/js/flask-split.js > flask_split_js/static/js/flask-split.min.js
