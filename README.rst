@@ -29,14 +29,27 @@ jQuery is required for the JavaScript library to work.
 API Reference
 -------------
 
-FlaskSplit.ab_test(experiment_name, alternatives..., callback)
+FlaskSplit.ab_test(experiment_name, alternatives, callback)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A port of Flask-Split's ``ab_test`` function. When the alternative
 has been decided, the callback function is called with the chosen
-alternative as its sole argument.
+alternative as its sole argument. In case an error occured with the request, the
+callback is called with undefined as its first argument and the jQuery response
+object as its second argument.
 
 Invalid arguments cause errors to be thrown.
+
+experiment_name
+    Name of the experiment. A string with a minimun length of 1.
+
+alternatives
+    A list with the alternatives. All alternatives must be strings with a
+    minimum length of 1.
+
+callback
+    A function to be called on success or on failure. Should take two arguments:
+    the chosen alternative and the error.
 
 FlaskSplit.finished(experiment_name, reset=true)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,6 +57,13 @@ FlaskSplit.finished(experiment_name, reset=true)
 A port of Flask-Split's ``finished`` function.
 
 Invalid arguments cause errors to be thrown.
+
+experiment_name
+    Name of the experiment. A string with a minimum length of 1.
+
+reset
+    Whether or not the experiment should be reset for the user. Defaults to
+    ``true``.
 
 Resources
 ---------
