@@ -39,7 +39,7 @@ setup(
     ],
     cmdclass={'test': Test},
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 2 - Pre-Alpha',
         'Environment :: Web Environment',
         'Framework :: Flask',
         'Intended Audience :: Developers',
