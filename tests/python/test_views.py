@@ -38,7 +38,7 @@ class TestABTestView(ViewTestCase):
             'experiment_name': experiment_name,
             'alternatives': alternatives,
         }
-        return self.client.get(
+        return self.client.post(
             self.url,
             data=json.dumps(data),
             content_type='application/json',

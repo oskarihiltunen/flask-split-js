@@ -23,7 +23,7 @@ def get_json():
     return request.json
 
 
-@split_js.route('/ab-test', methods=['GET'])
+@split_js.route('/ab-test', methods=['POST'])
 def ab_test():
     json = get_json()
     alternative = flask.ext.split.ab_test(

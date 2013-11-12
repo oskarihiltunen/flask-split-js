@@ -10,6 +10,9 @@ FlaskSplit = (function () {
 
     function validate_alternatives(alternatives) {
         var alternative;
+        if (alternatives.length < 2) {
+            throw Error('Must have at least 2 alternatives.');
+        }
         for (var i = 0; i < alternatives.length; ++i) {
             alternative = alternatives[i];
             if (typeof alternative != 'string') {
@@ -34,38 +37,42 @@ FlaskSplit = (function () {
     }
 
     function ab_test_request(experiment_name, alternatives, callback) {
-        $.get(
-            '/split-js/ab-test',
-            JSON.stringify({
-                experiment_name: experiment_name,
-                alternatives: alternatives
-            }),
-            function (data) {
+        var data = {
+            experiment_name: experiment_name,
+            alternatives: alternatives
+        };
+        $.ajax('/split-js/ab-test', {
+            accepts: 'application/json',
+            contentType: 'application/json; charset=UTF-8',
+            data: JSON.stringify(data),
+            dataType: 'json',
+            error: function (err) {
+                callback(undefined, err);
+            },
+            processData: false,
+            success: function (data) {
                 callback(data.alternative);
             },
-            'json'
-        );
+            type: 'POST'
+        });
     }
 
     function finished_request(experiment_name, reset) {
-        $.post(
-            '/split-js/finished',
-            JSON.stringify({
-                experiment_name: experiment_name,
-                reset: reset
-            }),
-            function (data) {},
-            'json'
-        );
+        var data = {
+            experiment_name: experiment_name,
+            reset: reset
+        };
+        $.ajax('/split-js/finished', {
+            accepts: 'application/json',
+            contentType: 'application/json; charset=UTF-8',
+            data: JSON.stringify(data),
+            dataType: 'json',
+            processData: false,
+            type: 'POST'
+        });
     }
 
-    function ab_test(experiment_name) {
-        var args = Array.prototype.slice.call(arguments, 1);
-        if (args.length < 3) {
-            throw Error('Function takes at least 4 arguments.');
-        }
-        var alternatives = args.slice(0, -1);
-        var callback = args.slice(-1)[0];
+    function ab_test(experiment_name, alternatives, callback) {
         validate_experiment_name(experiment_name);
         validate_alternatives(alternatives);
         validate_callback(callback);
