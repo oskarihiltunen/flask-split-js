@@ -1,4 +1,4 @@
-Flask-Split-JS version 0.2.0
+Flask-Split-JS version 0.2.1
 ============================
 
 .. image:: https://travis-ci.org/FelixLoether/flask-split-js.png?branch=master
@@ -68,6 +68,6 @@ reset
 Resources
 ---------
 
-- `Flask-Split on PyPI <https://pypi.python.org/pypi/Flask-Split/0.2.0>`_
+- `Flask-Split on PyPI <https://pypi.python.org/pypi/Flask-Split/0.2.1>`_
 - `Code <https://github.com/FelixLoether/flask-split-js>`_
 - `Issue tracker <https://github.com/FelixLoether/flask-split-js/issues>`_

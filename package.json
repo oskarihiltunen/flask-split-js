@@ -1,7 +1,7 @@
 {
     "name": "Flask-Split-JS",
     "private": true,
-    "version": "0.2.0",
+    "version": "0.2.1",
     "devDependencies": {
         "mocha": "1.14.x",
         "uglify-js": "2.4.x"
