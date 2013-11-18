@@ -3,6 +3,13 @@ Changes
 
 A list of changes done in each version.
 
+0.2.1
+-----
+
+- Fixed a ReferenceError in the JS that occured because ``module`` was not
+  defined.
+- Added a missing ``var`` to the JS.
+
 0.2.0
 -----
 

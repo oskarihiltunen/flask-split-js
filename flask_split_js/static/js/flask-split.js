@@ -1,4 +1,4 @@
-FlaskSplit = (function () {
+var FlaskSplit = (function () {
     function validate_experiment_name(experiment_name) {
         if (typeof experiment_name != 'string') {
             throw Error('Experiment name must be a string.');
@@ -94,4 +94,8 @@ FlaskSplit = (function () {
     };
 }());
 
-if (module && module.exports) { module.exports = FlaskSplit; }
+try {
+    module.exports = FlaskSplit;
+} catch (e) {
+    // Ignore "module is not defined".
+}
